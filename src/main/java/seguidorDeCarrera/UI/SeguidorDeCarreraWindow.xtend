@@ -130,9 +130,9 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 		var notasDeParcialLabel = new Label(mainPanel).setText("Notas de Parcial")
 
 		new Table<Nota>(mainPanel, typeof(Nota)) => [
-			heigth = 50
+			heigth = 100
 			width = 300
-			//			bindItemsToProperty("nombre")
+			bindItemsToProperty("materiaSeleccionada.notasDeCursada")
 			this.describeGridResultadosParcial(it)
 		]
 	}
