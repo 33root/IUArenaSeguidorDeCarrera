@@ -27,6 +27,7 @@ class SeguidorDeCarrera {
 	//Selecciones
 	@Property Materia materiaSeleccionada
 	@Property Nota notaSeleccionada
+
 	
 	
 	new() {
@@ -44,6 +45,7 @@ class SeguidorDeCarrera {
 		materias = newArrayList
 		
 		}
+		
 	def actualizar() {
 		materias = newArrayList
 
@@ -62,9 +64,15 @@ class SeguidorDeCarrera {
 			materiaSeleccionada = materias.get(0)
 	}
 	
-	def borrarMateria() {
-		getHomeMaterias().delete(materiaSeleccionada)
-		this.actualizar
-		materiaSeleccionada = null
+	def borrarNota () {
+		var notasTemporal = materiaSeleccionada.notasDeCursada.filter[nota | nota != notaSeleccionada].toList
+		this.actualizarNotas(materiaSeleccionada, notasTemporal)
+		
 	}
+	
+	def actualizarNotas(Materia materiaSeleccionada, List<Nota> notasTemporal) {
+		materiaSeleccionada.actualizarNotas(notasTemporal)
+		
+	}
+	
 }

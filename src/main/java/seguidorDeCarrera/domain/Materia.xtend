@@ -38,5 +38,10 @@ class Materia extends Entity implements Cloneable {
 		}
 	}
 
+	def actualizarNotas (List<Nota> nuevaLista) {
+		notasDeCursada = newArrayList
+		this.notasDeCursada = nuevaLista
+		
+	}
 }
 	

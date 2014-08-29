@@ -43,5 +43,7 @@ class Nota extends Entity implements Cloneable {
 	override clone() {
 		super.clone()
 	}
+	
+
 
 }

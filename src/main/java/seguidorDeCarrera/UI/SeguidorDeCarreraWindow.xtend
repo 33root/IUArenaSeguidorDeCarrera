@@ -142,8 +142,8 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 
 		new Column<Nota>(table).setTitle("Descripcion").setFixedSize(60).bindContentsToProperty("descripcion")
 
-		new Column<Nota>(table).setTitle("Aprobado").setFixedSize(60).bindContentsToProperty("aprobado").
-			bindContentsToTransformer([nota|if(nota.aprobado) "SI" else "NO"])
+		new Column<Nota>(table).setTitle("Aprobado").setFixedSize(60).
+		bindContentsToTransformer([nota|if(nota.aprobado) "SI" else "NO"])
 
 	}
 
@@ -166,7 +166,7 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 
 		new Button(buttonsPanel) //TODO: preguntar si esta seguro de querer borrar
 		.setCaption("-").onClick [ |
-			modelObject.borrarMateria
+			modelObject.borrarNota()
 		]
 
 	}
@@ -189,7 +189,5 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 		this.openDialog(new CrearNotaWindow(this))
 	}
 
-	def void borrarNota() { //TODO: Que borre el que esté seleccionado
-	}
 
 }
