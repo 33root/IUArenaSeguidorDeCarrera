@@ -4,6 +4,8 @@ import org.uqbar.commons.utils.Observable
 import org.uqbar.commons.model.CollectionBasedHome
 import seguidorDeCarrera.domain.Materia
 import org.apache.commons.collections15.Predicate
+import seguidorDeCarrera.domain.Nota
+import java.util.Date
 
 @Observable
 class HomeMaterias extends CollectionBasedHome<Materia> {
@@ -37,10 +39,13 @@ def inicializarUbicaciones() {
 
 	def void create(String pNombre) {
 		var materia = new Materia(pNombre)
-		//materia.nombre = pNombre
-
+		var nota = new Nota("Parcial", new Date(02/20/10), true)
+		var nota2 = new Nota("Parcial", new Date(13/13/13), false)
+		materia.notasDeCursada.add(nota)
+		materia.notasDeCursada.add(nota2)
 		this.create(materia)
 	}
+	
 	
 	override def Predicate<Materia> getCriterio(Materia example) {
 		null

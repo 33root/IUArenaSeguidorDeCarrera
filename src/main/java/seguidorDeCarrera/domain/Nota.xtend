@@ -9,6 +9,16 @@ class Nota extends Entity implements Cloneable {
 	@Property Date fecha
 	@Property String descripcion
 	@Property Boolean aprobado = false
+	
+	new(){
+		super()
+	}
+	
+	new(String descripcion, Date fecha, Boolean aprobado){
+		this.agregarDescripcion(descripcion)
+		this.agregarFecha(fecha)
+		this.agregarAprobado = aprobado
+	}
 
 	def agregarDescripcion(String descripcion) {
 		this.descripcion = descripcion
