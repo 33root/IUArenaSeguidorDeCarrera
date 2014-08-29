@@ -1,5 +1,5 @@
 package seguidorDeCarrera.Runnable
 
-class SeguidorDeCarreraWindow {
+class SeguidorDeCarreraApplication {
 	
 }
