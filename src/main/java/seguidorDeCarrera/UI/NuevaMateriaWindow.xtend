@@ -9,6 +9,7 @@ import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.widgets.Button
 import seguidorDeCarrera.home.HomeMaterias
 import org.uqbar.commons.utils.ApplicationContext
+import org.uqbar.arena.layout.ColumnLayout
 
 class NuevaMateriaWindow extends Dialog<Materia> {
 
@@ -16,30 +17,25 @@ class NuevaMateriaWindow extends Dialog<Materia> {
 		super(parent, new Materia)
 	}
 
-	override createContents(Panel mainPanel) {
-
-		this.setTitle("Nueva Materia")
-
-		new Label(mainPanel).text = "Nombre:"
-		val textoNombre = new TextBox(mainPanel)
-		textoNombre.bindValueToProperty("nombre")
-		textoNombre.width = 200
-	}
 
 	override createFormPanel(Panel mainPanel) {
 		this.setTitle("Nueva Materia")
 
+		val form = new Panel(mainPanel)
+		form.layout = new ColumnLayout(2)
+
 		new Label(mainPanel).text = "Nombre:"
 		val textoNombre = new TextBox(mainPanel)
 		textoNombre.bindValueToProperty("nombre")
 		textoNombre.width = 200
 
-		new Button(mainPanel) => [
-			caption = "Aceptar"
-			onClick [ |
-				this.accept
-			]
-		]
+	}
+
+	override protected void addActions(Panel actions) {
+		new Button(actions)
+		.setCaption("Aceptar")
+		.onClick[|this.accept]
+		.setAsDefault
 
 	}
 
@@ -47,7 +43,7 @@ class NuevaMateriaWindow extends Dialog<Materia> {
 		homeMaterias.create(modelObject)
 		super.executeTask()
 	}
-	
+
 	def getHomeMaterias() {
 		ApplicationContext.instance.getSingleton(typeof(Materia)) as HomeMaterias
 	}

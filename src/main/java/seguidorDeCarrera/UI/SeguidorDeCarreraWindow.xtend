@@ -108,9 +108,9 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	
 	override protected addActions(Panel actionsPanel) {
 		new Button(actionsPanel)
-		.setCaption("NuevaMateria")
+		.setCaption("Nueva Materia")
 		.onClick[|
-	//		this.nuevaMateria
+			this.nuevaMateria
 		]
 		.setAsDefault
 
@@ -185,9 +185,9 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	
 	
 	//****Acciones de los botones**//
-//	def void nuevaMateria() {
-//		this.openDialog(new NuevaMateriaWindow(this, modelObject))
-//	}
+	def void nuevaMateria() {
+		this.openDialog(new NuevaMateriaWindow(this))
+	}
 
 def void editarNota() {
 		//this.openDialog(new EditarNotaWindow())
