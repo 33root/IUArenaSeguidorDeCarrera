@@ -51,7 +51,7 @@ class SeguidorDeCarrera {
 
 		this.materias = homeMaterias.allInstances.toList
 		this.seleccionarMateriaNumeroUno
-
+		this.seleccionarNotaNumeroUno
 	}
 	
 	def HomeMaterias getHomeMaterias() {
