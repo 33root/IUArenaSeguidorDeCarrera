@@ -133,6 +133,7 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 			heigth = 100
 			width = 300
 			bindItemsToProperty("materiaSeleccionada.notasDeCursada")
+			bindValueToProperty("notaSeleccionada")
 			this.describeGridResultadosParcial(it)
 		]
 	}
