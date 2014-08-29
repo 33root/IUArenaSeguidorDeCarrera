@@ -1,5 +1,5 @@
 package seguidorDeCarrera.UI
 
-class EditarCarreraWindow {
+class CrearNotaWindow {
 	
 }
