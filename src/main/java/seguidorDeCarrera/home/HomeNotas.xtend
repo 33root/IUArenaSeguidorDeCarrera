@@ -7,6 +7,11 @@ import org.uqbar.commons.utils.Observable
 @Observable
 class HomeNotas extends CollectionBasedHome<Nota>  {
 	
+	override void validateCreate(Nota nota) {
+		nota.validar()
+		
+	}
+	
 	override def getEntityType() {
 		typeof(Nota)
 	}
