@@ -39,7 +39,6 @@ class EditarNotaWindow extends Dialog<Nota> {
 		form.layout = new ColumnLayout(2)
 		new Label(form).text = "Aprobado"
 		var checkResumen = new CheckBox(form)
-		checkResumen.bindEnabledToProperty("aprobado")
 		checkResumen.bindValueToProperty("aprobado")
 	}
 	

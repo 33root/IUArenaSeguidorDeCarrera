@@ -158,7 +158,9 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	//TODO: Hacer un builder para los botones
 	def addActions2(Panel buttonsPanel) {
 		new Button(buttonsPanel)//TODO: Falta que verifique que alguna nota este seleccionada
-		.setCaption("Editar").onClick[|this.editarNota].setAsDefault
+		.setCaption("Editar")
+		.onClick[|this.editarNota]
+		.setAsDefault
 
 		new Button(buttonsPanel).setCaption("+").onClick [ |
 			this.crearNota
