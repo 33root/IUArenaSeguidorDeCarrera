@@ -19,4 +19,9 @@ class Materia extends Entity {
 		this.nombre = nombre
 		this.notasDeCursada = newArrayList
 	}
+	
+	def agregarNota(Nota nota){
+		this.notasDeCursada.add(nota)
+		
+	}
 }
