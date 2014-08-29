@@ -17,6 +17,7 @@ import org.uqbar.arena.widgets.Button
 import seguidorDeCarrera.domain.Nota
 import org.uqbar.arena.windows.Dialog
 import org.uqbar.arena.layout.VerticalLayout
+import org.uqbar.arena.layout.HorizontalLayout
 
 class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 
@@ -26,19 +27,20 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	}
 
 	override def createMainTemplate(Panel mainPanel) {
+				
 		this.setTitle("Seguidor De Carrera")
 		this.setTaskDescription("Seguidor de Carrera")
-		mainPanel.setLayout(new ColumnLayout(2))
+		mainPanel.setLayout(new ColumnLayout(3))
+		mainPanel.setWidth(400)
 		createFormPanel(mainPanel)
 
 	}
 
 	override protected createFormPanel(Panel mainPanel) {
-
+	
 		addPanelMaterias(mainPanel)
 		addMateriaSeleccionadaPanel(mainPanel)
-		addDatosDeMateriaPanel(mainPanel)
-		addButtons(mainPanel)
+		addDatosDeMateriaPanel(mainPanel)		
 		addResultadosDeParcialesPanel(mainPanel)
 
 	}
@@ -47,6 +49,7 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 		var panelDeMaterias = new Panel(mainPanel)
 		panelDeMaterias.setLayout(new VerticalLayout)
 		this.createGrid(panelDeMaterias)
+		addButtons(mainPanel)
 
 	}
 
@@ -68,13 +71,15 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 
 	//**Muestra el nombre de la materia seleccionada**
 	def addMateriaSeleccionadaPanel(Panel mainPanel) {
-		new Label(mainPanel).setWidth(90).bindValueToProperty("materiaSeleccionada.nombre")
+		var panelMateriaSeleccionada = new Panel(mainPanel)
+		panelMateriaSeleccionada.setLayout(new HorizontalLayout)
+		new Label(mainPanel).bindValueToProperty("materiaSeleccionada.nombre")
 
 	}
 
 	def addDatosDeMateriaPanel(Panel mainPanel) {
 
-		var datosMateriasPanel = new Panel(mainPanel).setWidth(500)
+		var datosMateriasPanel = new Panel(mainPanel).setWidth(150)
 		datosMateriasPanel.setLayout(new ColumnLayout(4))
 
 		var labelAnio = new Label(datosMateriasPanel).setText("Año de Cursada")
