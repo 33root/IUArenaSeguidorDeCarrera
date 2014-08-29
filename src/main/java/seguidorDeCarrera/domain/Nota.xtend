@@ -5,7 +5,7 @@ import java.util.Date
 import org.uqbar.commons.model.Entity
 
 @Observable
-class Nota extends Entity {
+class Nota extends Entity implements Cloneable {
 	@Property Date fecha
 	@Property String descripcion
 	@Property Boolean aprobado = false
