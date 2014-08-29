@@ -45,6 +45,11 @@ def inicializarUbicaciones() {
 	override def Predicate<Materia> getCriterio(Materia example) {
 		null
 	}
+	
+	override void validateCreate(Materia materia) {
+		materia.validar()
+		
+	}
 
 	override createExample() {
 		new Materia()

@@ -190,7 +190,7 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	}
 
 def void editarNota() {
-		//this.openDialog(new EditarNotaWindow())
+		this.openDialog(new EditarNotaWindow(this, modelObject.notaSeleccionada))
 	}
 
 	def openDialog(Dialog<?> dialog) {
