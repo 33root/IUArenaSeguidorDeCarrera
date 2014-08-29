@@ -16,6 +16,7 @@ import org.uqbar.arena.widgets.Selector
 import org.uqbar.arena.widgets.Button
 import seguidorDeCarrera.domain.Nota
 import org.uqbar.arena.windows.Dialog
+import org.uqbar.arena.layout.VerticalLayout
 
 class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 
@@ -36,7 +37,7 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	
 	def addPanelMaterias(Panel mainPanel) {
 		var panelDeMaterias = new Panel(mainPanel)	
-		panelDeMaterias.setLayout(new ColumnLayout(2))
+		panelDeMaterias.setLayout(new VerticalLayout)
 		this.createGrid(panelDeMaterias)
 
 	}
@@ -102,7 +103,7 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	
 		def addButtons(Panel mainPanel) {
 		var buttonsPanel = new Panel(mainPanel)
-		buttonsPanel.setLayout(new ColumnLayout(7))
+		buttonsPanel.setLayout(new ColumnLayout(3))
 		this.addActions(buttonsPanel)
 	}
 	

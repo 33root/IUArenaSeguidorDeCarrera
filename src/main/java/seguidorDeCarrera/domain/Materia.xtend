@@ -31,7 +31,7 @@ class Materia extends Entity implements Cloneable {
 	 */
 	def validar() {
 		if (nombre == null) {
-			throw new UserException("Debe ingresar número")
+			throw new UserException("Debe ingresar nombre de materia")
 		}
 	}
 
