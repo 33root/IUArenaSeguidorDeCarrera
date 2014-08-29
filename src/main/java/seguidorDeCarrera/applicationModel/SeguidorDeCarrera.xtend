@@ -64,6 +64,11 @@ class SeguidorDeCarrera {
 			materiaSeleccionada = materias.get(0)
 	}
 	
+	def seleccionarNotaNumeroUno() {
+		if (materiaSeleccionada.notasDeCursada.length > 0)
+			notaSeleccionada = materiaSeleccionada.notasDeCursada.get(0)
+	}
+	
 	def borrarNota () {
 		var notasTemporal = materiaSeleccionada.notasDeCursada.filter[nota | nota != notaSeleccionada].toList
 		this.actualizarNotas(materiaSeleccionada, notasTemporal)
