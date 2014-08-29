@@ -89,8 +89,8 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 		labelAnio.foreground = Color::BLUE
 		var checkFinalAprobado = new CheckBox(datosMateriasPanel)
 
-		//	checkFinalAprobado.bindEnabledToProperty("finalAprobado")
-		//	checkFinalAprobado.bindValueToProperty("finalAprobado")
+//		checkFinalAprobado.bindEnabledToProperty("materiaSeleccionada.finalAprobado")
+		checkFinalAprobado.bindValueToProperty("materiaSeleccionada.finalAprobado")
 		new Label(datosMateriasPanel).setText("Ubicación materia").foreground = Color::ORANGE
 
 		new Selector(datosMateriasPanel).allowNull(false) => [
