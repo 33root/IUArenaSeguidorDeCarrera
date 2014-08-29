@@ -10,6 +10,7 @@ import org.uqbar.arena.layout.ColumnLayout
 import org.uqbar.arena.widgets.CheckBox
 import seguidorDeCarrera.home.HomeNotas
 import org.uqbar.commons.utils.ApplicationContext
+import org.uqbar.arena.widgets.Button
 
 class EditarNotaWindow extends Dialog<Nota> {
 	
@@ -44,5 +45,13 @@ class EditarNotaWindow extends Dialog<Nota> {
 	
 	def getHomeNota() {
 		ApplicationContext.instance.getSingleton(typeof(Nota)) as HomeNotas
+	}
+	
+	override protected void addActions(Panel actions) {
+		new Button(actions)
+		.setCaption("Aceptar")
+		.onClick[|this.accept]
+		.setAsDefault
+
 	}
 }
