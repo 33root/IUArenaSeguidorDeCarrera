@@ -25,6 +25,14 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 		modelObject.actualizar()
 	}
 	
+	override def createMainTemplate(Panel mainPanel) {
+		this.setTitle("Seguidor De Carrera")
+		this.setTaskDescription("Seguidor de Carrera")
+		mainPanel.setLayout(new ColumnLayout(2))
+		createFormPanel(mainPanel)
+
+	}
+	
 	override protected createFormPanel(Panel mainPanel) {
 
 		addPanelMaterias(mainPanel)
