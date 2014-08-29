@@ -15,8 +15,17 @@ class HomeMaterias extends CollectionBasedHome<Materia> {
 	}
 
 	def void init() {
-		this.create("Matematica")
-		this.create("Lengua")
+		var nota1 = this.createNota("Primer Parcial", new Date(13/13/13), true)
+		var nota2 = this.createNota("Segundo Parcial", new Date(10/10/10), false)
+		var nota3 = this.createNota("Primer Parcial", new Date(10/07/10), true)
+		var nota4 = this.createNota("TP", new Date (10/10/11), false)
+		var materia1 = this.create("Lengua")
+		var materia2 = this.create("Matematica")
+		materia1.agregarNota(nota1)
+		materia1.agregarNota(nota2)
+		materia2.agregarNota(nota3)
+		materia2.agregarNota(nota4)
+		
 		this.inicializarUbicaciones()
 		
 
@@ -37,13 +46,17 @@ def inicializarUbicaciones() {
 		return ubicaciones
 	}
 
-	def void create(String pNombre) {
+	def create(String pNombre) {
 		var materia = new Materia(pNombre)
-		var nota = new Nota("Parcial", new Date(02/20/10), true)
-		var nota2 = new Nota("Parcial", new Date(13/13/13), false)
-		materia.notasDeCursada.add(nota)
-		materia.notasDeCursada.add(nota2)
 		this.create(materia)
+		return materia
+	}
+	
+	def createNota(String descripcion, Date fecha, Boolean aprobado){
+		
+		new Nota(descripcion, fecha, aprobado)
+		
+		
 	}
 	
 	
