@@ -32,11 +32,12 @@ class SeguidorDeCarrera {
 	new() {
 		this.inicializarColeccionDeMaterias
 		this.inicializarUbicaciones
+		
 
 	}
 	
 	def inicializarUbicaciones() {
-		ubicaciones = newArrayList
+		ubicaciones = homeMaterias.inicializarUbicaciones
 	}
 
 	def void inicializarColeccionDeMaterias() {
