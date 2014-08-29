@@ -8,6 +8,8 @@ import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.layout.ColumnLayout
 import org.uqbar.arena.widgets.CheckBox
+import seguidorDeCarrera.home.HomeNotas
+import org.uqbar.commons.utils.ApplicationContext
 
 class EditarNotaWindow extends Dialog<Nota> {
 	
@@ -38,5 +40,9 @@ class EditarNotaWindow extends Dialog<Nota> {
 		var checkResumen = new CheckBox(form)
 		checkResumen.bindEnabledToProperty("aprobado")
 		checkResumen.bindValueToProperty("aprobado")
+	}
+	
+	def getHomeNota() {
+		ApplicationContext.instance.getSingleton(typeof(Nota)) as HomeNotas
 	}
 }
