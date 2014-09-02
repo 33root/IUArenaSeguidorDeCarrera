@@ -83,11 +83,11 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 		datosMateriasPanel.setLayout(new ColumnLayout(4))
 
 		var labelAnio = new Label(datosMateriasPanel).setText("Año de Cursada")
-		new TextBox(datosMateriasPanel) => [] //TODO: Aca tendria que hacer la busqueda de las materias de ese año
+		new TextBox(datosMateriasPanel).bindValueToProperty("materiaSeleccionada.anioDeCursada")
 		labelAnio.foreground = Color::RED
 
 		var labelProfesor = new Label(datosMateriasPanel).setText("Profesor")
-		new TextBox(datosMateriasPanel) => []
+		new TextBox(datosMateriasPanel).bindValueToProperty("materiaSeleccionada.profesorDeCursada")
 		labelProfesor.foreground = Color::magenta
 
 		var labelFinalAprobado = new Label(datosMateriasPanel).setText("Final Aprobado")

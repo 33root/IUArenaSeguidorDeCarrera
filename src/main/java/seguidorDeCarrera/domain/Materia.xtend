@@ -12,6 +12,8 @@ class Materia extends Entity implements Cloneable {
 	public val static nombre_Property = "nombre"
 	@Property List<Nota> notasDeCursada
 	@Property Boolean finalAprobado = false
+	@Property int anioDeCursada
+	@Property String profesorDeCursada
 
 	new() {
 		super()
