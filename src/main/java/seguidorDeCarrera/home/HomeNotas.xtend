@@ -4,6 +4,7 @@ import org.uqbar.commons.model.CollectionBasedHome
 import seguidorDeCarrera.domain.Nota
 import org.uqbar.commons.utils.Observable
 import org.apache.commons.collections15.Predicate
+import java.util.Date
 
 @Observable
 class HomeNotas extends CollectionBasedHome<Nota>  {
@@ -12,6 +13,13 @@ class HomeNotas extends CollectionBasedHome<Nota>  {
 		var nota = new Nota
 		this.create(nota)
 		return nota
+	}
+	
+	def createNota(String descripcion, Date fecha, Boolean aprobado){
+		
+		new Nota(descripcion, fecha, aprobado)
+		
+		
 	}
 	
 	override void validateCreate(Nota nota) {
