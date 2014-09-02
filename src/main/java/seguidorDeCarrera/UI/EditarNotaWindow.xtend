@@ -43,7 +43,7 @@ class EditarNotaWindow extends Dialog<Nota> {
 	}
 	
 	def getHomeNota() {
-		ApplicationContext.instance.getSingleton(typeof(Nota)) as HomeNotas //creo que aca esta el problema del "+" nota no funcione esta acá
+		//ApplicationContext.instance.getSingleton(typeof(Nota)) as HomeNotas //creo que aca esta el problema del "+" nota no funcione esta acá
 	}
 	
 	override protected void addActions(Panel actions) {
