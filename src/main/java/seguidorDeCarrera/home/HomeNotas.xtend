@@ -9,8 +9,8 @@ import java.util.Date
 @Observable
 class HomeNotas extends CollectionBasedHome<Nota>  {
 	
-	def create(String nombre) {
-		var nota = new Nota
+	def create(String descripcion, Date fecha, boolean aprobado) {
+		var nota = new Nota(descripcion, fecha, aprobado)
 		this.create(nota)
 		return nota
 	}

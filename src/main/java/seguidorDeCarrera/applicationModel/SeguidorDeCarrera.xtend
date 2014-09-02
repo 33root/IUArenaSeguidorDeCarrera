@@ -8,12 +8,14 @@ import java.util.Observer
 import seguidorDeCarrera.domain.Nota
 import org.uqbar.commons.utils.ApplicationContext
 import seguidorDeCarrera.home.HomeMaterias
+import seguidorDeCarrera.home.HomeNotas
 
 @Observable
 class SeguidorDeCarrera {
 	
 	@Property List<Materia> materias = new ArrayList
 	@Property List<String> ubicaciones
+	@Property List <Nota> notas = new ArrayList
 	@Property int anioDeCursada
 	val static aniodeCursada_Property = "anioDeCursada"
 	@Property Boolean finalAprobado
@@ -78,6 +80,10 @@ class SeguidorDeCarrera {
 	def actualizarNotas(Materia materiaSeleccionada, List<Nota> notasTemporal) {
 		materiaSeleccionada.actualizarNotas(notasTemporal)
 		
+	}
+	
+	def HomeNotas getHomeCelulares() {
+		ApplicationContext.instance.getSingleton(typeof(Nota))
 	}
 	
 }

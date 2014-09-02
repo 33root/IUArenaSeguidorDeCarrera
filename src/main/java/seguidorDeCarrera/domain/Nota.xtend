@@ -15,7 +15,7 @@ class Nota extends Entity implements Cloneable {
 		super()
 	}
 
-	new(String descripcion, Date fecha, Boolean aprobado) {
+	new(String descripcion, Date fecha, Boolean aprobado) {		
 		this.agregarDescripcion(descripcion)
 		this.agregarFecha(fecha)
 		this.agregarAprobado = aprobado
