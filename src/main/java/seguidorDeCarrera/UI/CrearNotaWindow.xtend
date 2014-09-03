@@ -13,8 +13,7 @@ class CrearNotaWindow extends EditarNotaWindow {
 	
 	
 	override executeTask() {
-		//homeNota.create(modelObject)
-		val nota = new Nota
+		homeNota.create(modelObject)
 		
 		super.executeTask()
 	}

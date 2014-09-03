@@ -83,8 +83,9 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 		datosMateriasPanel.setLayout(new ColumnLayout(4))
 
 		var labelAnio = new Label(datosMateriasPanel).setText("Año de Cursada")
-		new TextBox(datosMateriasPanel).bindValueToProperty("materiaSeleccionada.anioDeCursada")
+		val anioDeCursadaTexBox = new TextBox(datosMateriasPanel).bindValueToProperty("materiaSeleccionada.anioDeCursada")
 		labelAnio.foreground = Color::RED
+		//anioDeCursadaTexBox.width = 200 por alguna razon me dice que no entiende width cuando en NuevaMateria si u.u
 
 		var labelProfesor = new Label(datosMateriasPanel).setText("Profesor")
 		new TextBox(datosMateriasPanel).bindValueToProperty("materiaSeleccionada.profesorDeCursada")
@@ -127,7 +128,7 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	}
 
 	def createGridResultadosParcial(Panel mainPanel) {
-		var notasDeParcialLabel = new Label(mainPanel).setText("Notas de Parcial")
+		new Label(mainPanel).setText("Notas de Parcial")
 
 		new Table<Nota>(mainPanel, typeof(Nota)) => [
 			heigth = 100
@@ -139,7 +140,9 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	}
 
 	def describeGridResultadosParcial(Table<Nota> table) { //TODO: hacer un builder para cada columna
-		new Column<Nota>(table).setTitle("Fecha").setFixedSize(60).bindContentsToProperty("fecha")
+		new Column<Nota>(table).setTitle("Fecha").setFixedSize(60)
+			.bindContentsToTransformer [ nota | nota.fecha.date + "/" + nota.fecha.month + "/" + nota.fecha.year ]
+		//.bindContentsToProperty("fecha")
 
 		new Column<Nota>(table).setTitle("Descripcion").setFixedSize(60).bindContentsToProperty("descripcion")
 
@@ -191,6 +194,5 @@ class SeguidorDeCarreraWindow extends SimpleWindow<SeguidorDeCarrera> {
 	def void crearNota() {
 		this.openDialog(new CrearNotaWindow(this))
 	}
-
 
 }

@@ -24,7 +24,6 @@ class HomeNotas extends CollectionBasedHome<Nota>  {
 	
 	override void validateCreate(Nota nota) {
 		nota.validar()
-		
 	}
 	
 	override def getEntityType() {
